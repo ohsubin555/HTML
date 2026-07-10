@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2026. 7. 10. 오후 2:54:57</title>
+<link rel="shortcut icon" type="image/x-icon" href="/webPro/images/SiSt.ico">
+<style>
+    /* :가상클래스 - 특정한 상태  */
+    /* a:link{
+        color: black;
+    }
+    a:visited{
+        color: yellow;
+    }
+    a:hover{
+        color: red;
+        text-decoration: underline;
+        text-transform: uppercase;
+    }
+    a:active{text-decoration: underline overline line-through;} */
+
+    a{
+color: black;
+text-decoration: none;
+
+    }
+
+    a:hover{
+        color: red;
+        text-decoration: underline;
+        text-transform: uppercase;
+    }
+
+</style>
+<script>
+    function bookmark() {
+        //window.alert('함수 호출 확인~');
+        var url = "ex02.html#predesc";
+        //BOM 
+        location.href = url;
+    }
+</script>
+</head>
+
+<body>
+<!-- 
+방문한 적이 없으면 파랑색
+방문한 적이 있으면 자주색
+활성             빨간색 -->
+
+<!-- target = "_blank 새 창 띄워 이동 -->
+<a href = "http://www.sist.co.kr" target="_blank">(주)쌍용교육센터</a><br>
+<a href = "http://www.naver.com" target = "self ">Naver</a><br>
+
+<hr>
+<a href="javascript:window.alert('경고창 띄웁니다.') 자바 스크립트 코딩" title = "js 실행"> js 경고창 띄우기</a>
+<br>
+<a href="ex02.html#predesc">pre설명</a>
+<br>
+<a href="javascript:bookmark()">pre설명2</a>
+</body>
+</html>
