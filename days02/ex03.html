@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 13. 오전 11:02:38</title>
+<link rel="shortcut icon" type="image/x-icon"
+	href="/webPro/images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+
+table{
+border: 1px solid gray;
+width: 50%;
+ 
+margin-left: auto;
+margin-right: auto;
+
+border-collapse : collapse;
+}
+
+td, th{
+border: 1px solid gray;
+}
+
+tr td:first-child{
+text-align: center;
+}
+
+/* tbody tr:nth-child(odd){ */
+/* tbody tr:nth-child(even){ */
+tbody tr:nth-child(2){
+background-color : #ddd;
+}
+
+thead tr th{
+background-color : #000;
+color : #fff;
+}
+
+tbody tr:hover{
+border: 1p solid #ddd;
+background-color : red;
+cursor: pointer;
+}
+</style>
+</head>
+<body>
+	<!--  
+ [table 태그]
+ ㄴ 데이터를 행/ 열로 출력
+    deptno   dname           loc          
+   10      ACCOUNTING      NEW YORK   행 <tr == table row>
+   20      RESEARCH        DALLAS     행   
+   30      SALES           CHICAGO    행      
+   40      OPERATIONS      BOSTON     행
+ 
+  -->
+  <table>
+  <caption>부서정보</caption>
+  <tr>
+  <th>deptno</th>
+  <th>dname</th>
+  <th>loc</th>
+  </tr>
+  <tr>
+  <td>10</td>
+  <td>ACCOUNTING</td>
+  <td>NEW YORK </td>
+  </tr>
+  <tr>
+  <td>20</td>
+  <td>RESEARCH</td>
+  <td>DALLAS </td>
+  </tr>
+  <tr>
+  <td>30</td>
+  <td>SALES</td>
+  <td>CHICAGO </td>
+  </tr>
+  <tr>
+  <td >40</td>
+  <td>OPERATIONS</td>
+  <td>BOSTON</td>
+  </tr>
+  </table>
+
+</body>
+</html>
+
+<!-- 방법1 모든 td alin 속성 추가 -->
+

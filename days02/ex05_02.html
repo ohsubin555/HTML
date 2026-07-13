@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 13. 오후 4:06:39</title>
+<link rel="shortcut icon" type="image/x-icon" href="/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+</style>
+</head>
+<body>
+<!-- 속성연산자 [] -->
+<시작태그></시작태그>
+<div id ="box1"></div>
+<!-- div[id] -->
+<!-- #box1 -->
+
+<div id = "header" class="team"></div>
+<!-- #header.team -->
+#header.team
+
+<div id="nav" class="box1 box2 box3"></div>
+<!-- #nav.box1.box2.box3 -->
+
+<div class ="box1"></div>
+[class=box1]
+<!-- .box1 -->
+
+<font size="7" color="red" face="궁서체"></font>
+<!-- font[size=7][color=red][face="궁서체"] -->
+<!-- font[size=7 color=red face="궁서체"] -->
+
+<!-- 항목에 번호 매기기: $ --> 
+h$*6
+
+
+<!-- 문제 -->
+<ul>
+    <li class="item1"></li>
+    <li class="item2"></li>
+    <li class="item3"></li>
+    <li class="item4"></li>
+    <li class="item5"></li>
+</ul>
+
+ul>li[class=item$]*5
+ul>li.item$*5
+ul>li.item$$$*5
+ul>li.item$$$@3*15
+
+<!-- 번호를 뒤에서.. -->
+ul>li.item$@-*5
+
+<!-- 텍스트 {} 중괄호  -->
+<div>홍길동</div>
+
+div{홍길동}
+
+a[href=#]>{Click me}
+
+a{click}>b{here}
+
+p>{Click}+a{here}+{to continue}
+
+(header>ul.nav>li{item$}*5)+footer
+
+
+<hr>
+  <div id="page">
+    <div class="logo"></div>
+    <ul id="navigation">
+       <li><a href=""></a></li>
+       <li><a href=""></a></li>
+       <li><a href=""></a></li>
+       <li><a href=""></a></li>
+       <li><a href=""></a></li>
+    </ul>
+   </div> 
+   
+   
+  hr+#page>.logo+ul#navigation>li*5>a
+
+</body>
+</html>
