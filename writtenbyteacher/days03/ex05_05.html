@@ -1,132 +1,68 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Grid Layout</title>
-
+<title>2026. 7. 20. 오후 12:30:38</title>
+<link rel="shortcut icon" type="image/x-icon" href="/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    font-family:Arial, Helvetica, sans-serif;
-}
-
-#header{
-    background:#666;
-    color:white;
-    padding:30px;
-    text-align:center;
-    font-size:35px;
-}
-
-#footer{
-    background:#777;
-    color:white;
-    padding:20px;
-    text-align:center;
-    font-size:25px;
-}
-
-/* ===========================
-   Grid Layout
-=========================== */
-
-#section{
-
-    display:grid;
-
-    /* 30% : 70% */
-    grid-template-columns:30% 70%;
-
-    min-height:500px;
-}
-
-#nav{
-    background:#ccc;
-    padding:20px;
-}
-
-#article{
-    background:#f1f1f1;
-    padding:20px;
-}
-
-ul{
-    padding-left:20px;
-}
-
+ .box{
+    border:1px solid gray;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+  }
+  
+  /* div:first-child{} */
+  /* div:first-of-type{} */
+  div:nth-of-type(1){
+    background-color: red;
+    position: static; /* 정적 */
+  }
+  
+  div:nth-of-type(2){
+    background-color: green;
+    position: relative; /* 상대적인 */
+    left: 20px;
+    top: 20px;
+  }
+  
+  div:nth-of-type(3){
+    background-color: blue;
+    position: fixed; /* 고정 */
+    right: 20px;
+    bottom: 20px;
+  }
+  
+  /* div:nth-of-type(5){ */
+  div:last-of-type{
+    background-color: yellow;
+    
+    position: absolute;
+    left: 50px;
+    top: 25px;
+    
+    z-index: -1;
+  }
 </style>
-
-<style>
-
-/* 반응형 */
-
-@media screen and (max-width:800px){
-
-    #section{
-
-        grid-template-columns:1fr;
-
-    }
-
-}
-
-</style>
-
 </head>
-
 <body>
 
-<div id="header">
-    <h2>Cities - Grid Layout</h2>
-</div>
 
-<div id="section">
-
-    <div id="nav">
-
-        <ul>
-            <li><a href="#">London</a></li>
-            <li><a href="#">Paris</a></li>
-            <li><a href="#">Seoul</a></li>
-        </ul>
-
-    </div>
-
-    <div id="article">
-
-        <h2>London</h2>
-
-        <p>Lorem ipsum dolor sit amet...</p>
-
-        <p>Lorem ipsum dolor sit amet...</p>
-
-        <h2>Paris</h2>
-
-        <p>Lorem ipsum dolor sit amet...</p>
-
-        <p>Lorem ipsum dolor sit amet...</p>
-
-        <h2>Seoul</h2>
-
-        <p>Lorem ipsum dolor sit amet...</p>
-
-        <p>Lorem ipsum dolor sit amet...</p>
-
-    </div>
-
-</div>
-
-<div id="footer">
-    <h2>Footer</h2>
-</div>
-
+<script>
+  // js
+  for (var i = 1; i <= 5; i++) {
+	const div = document.createElement("div");
+	div.innerText = `Box - ${i}`;
+	div.classList.add("box");
+	document.body.appendChild( div );
+  } // for
+</script>
 </body>
 </html>
+
+
+
+
+

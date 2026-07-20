@@ -3,56 +3,117 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026. 7. 14. 오후 4:20:41</title>
+<title>2026. 7. 20. 오후 2:49:35</title>
 <link rel="shortcut icon" type="image/x-icon" href="/webPro/images/SiSt.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <style>
+  *{
+     box-sizing: border-box;
+  }
+  body{
+    font-family: Arial, Verdana, sans-serif;
+  }
+  
+  .open-button{
+    background-color: #555;
+    color:white;
+    padding: 16px 20px;
+    border: none;   /* 테두리 제거 */    
+    cursor: pointer;
+    opacity: 0.8;    
+    width: 280px;    
+    position: fixed;
+    right:28px;
+    bottom: 23px;
+  }
+  .form-popup{
+    border: 3px solid #f1f1f1;    
+    position: fixed;
+    right: 15px;
+    bottom:0;    
+    z-index: 10;
+    
+    display: none;
+  }
+  .form-container{
+    max-width: 300px;
+    padding: 30px;
+    background-color: white;
+  }
+  .form-container input[type=text]
+     , .form-container input[type=password]{
+       border: none;    
+       width: 100%;   
+       background-color: #f1f1f1;
+       margin: 5px 0 22px 0;
+       padding: 15px;
+  }
+  .form-container input[type=text]:focus
+     , .form-container input[type=password]:focus{     
+     background-color: #ddd;   
+     outline: none;     
+  }
+  .form-container .btn{
+    background-color: #4caf50;
+    color:white;
+    border:none;
+    padding:16px 20px;
+    cursor:pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+  }
+  .form-container .btn.cancel{
+    background-color: red;
+  }
+  .form-container .btn:hover, .open-button:hover{
+    opacity: 1;
+  }
 </style>
 </head>
 <body>
-<!-- 
-     [ html 코딩 규칙 ]
-     1. 첫 번째 줄에 선언문   <!DOCTYPE html>을 선언하자.
-        DOCTYPE 대문자 권장
-        
-     2. 태그명 : 소문자 권장. 
-     3. 속성명 : 소문자 권장
-     
-        속성명="속성값"
-        속성명='속성값' *** 권장
-        속성명=속성값
-        
-     4. 닫기태그가 필요없는 html 태그도 있다. 
-        <br>
-        <meta>           빈요소
-        <img>
-        <hr>
-        등등    
-        
-     5. 이미지  width, height 반드시 지정.
-              style="width:??px; height:??px"
-              
-     6. (기억) *****
-        url 속성값은 대소문자를 구분한다.  
-        
-     7. 속성명="속성값"   O(권장)
-        속성명 = "속성값"  
-        
-     8. (주의)
-        수업 중에는 들여쓰기, 공백, 빈줄 추가하지만
-        필요없이 하지 말자. 
-        
-     9.  html5
-         <meta  >
-         
-         xml, xhtml 사용..
-         <meta    />    
-         <meta    ></meta>  
-           
-     10. lang 속성 : 웹 페이지의 언어. 
-         -> 검색엔진, 브라우저...
-     
-     10. html / htm ( 허용 )                  
- -->
+<!-- h3+button.open-button -->
+<h3>팝업(popup) 폼(form)</h3>
+<button class="open-button" >Open Form</button>
+<!-- .form-popup#myForm>form[class=form-container] -->
+<div class="form-popup" id="myForm">
+  <form action="" class="form-container" autocomplete="off">
+    <h1>Login</h1>
+    
+    <label for="email"><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" 
+    id="email" name="email" required>
+    
+    <label for="psw"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" 
+    id="pwd" name="psw" required>
+    
+    <button type="submit" class="btn">Login</button>
+    <button type="button" class="btn cancel">Close</button>
+    
+  </form>
+</div>
+
+<script>
+  // jq
+  $("body > button.open-button").on("click", function (){
+	  $("#myForm").show();
+  });
+  
+  $("#myForm > form > button.btn.cancel").on("click", function (){
+	  // alert("XXX");
+	  $("#myForm").hide();
+	  $("#email").val("");
+	  $("#pwd").val("");
+  });
+</script>
 </body>
 </html>
+
+
+
+
+
+
+
+

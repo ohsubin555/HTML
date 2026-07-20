@@ -3,128 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026. 7. 14. 오후 12:27:28</title>
+<title>2026. 7. 20. 오전 11:10:10</title>
 <link rel="shortcut icon" type="image/x-icon" href="/webPro/images/SiSt.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <style>
-  *{
-    box-sizing: border-box;
-  }
-  
-  body{
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  
-  div#header{
-    background-color: #777;
-    color: white;
-    padding: 30px;
-    text-align: center;
-    font-size: 35px;
-  }
-  
-  div#footer{
-    background-color: #777;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    font-size: 25px;
-  }
-  
-  div#section{
+  .boxStyle{
     border: 1px solid red;
+    width: 100px;
+    height: 100px;
+    text-align: center;
   }
-  
-  div#nav{
-    width: 30%;
-    background-color: #ccc;
-    height: 300px;
-    padding:20px;
-    
-    float: left;
-  }
-  
-  div#article{
-    width: 70%;
-    background-color: #f1f1f1;
-    padding:20px;
-    
-    min-height: 300px; 
-    /* height: 300px; */
-    
-    float: left;
-  }
-  /* 
-  [ css float 속성으로 배치(layout)하는 작업에서 
-     가장 많이 사용하는 Clearfix 기법 ]
-    - ::after라는 가상요소를 만들어서 
-      부모(section) 가   float된 자식(nav, article)
-      의 높이를 제대로 인식하도록하는 코딩 
-    - section 마지막 보이지 않는 가상 요소를 추가: section::after
-    - content: 가상 요소의 내용을 지정  
-    - display: table > block;  가상 요소가 하나의 블록처럼 자리 잡도록 하는 코딩.
-    - clear: float 속성 left, right   끝낸다. 
-    
-   */
-  div#section::after{
-    content: "";
-    display: table;
-    clear: both;
-  }
-</style>
-<style>
-/* 
-  css2에 도입된 "미디어 쿼리" 규칙을 사용하면
-  미디어 유형마다 다른 스타일을 정의할 수 있다.
-  
-  @media  not|only mediatype and (적용규칙) and (적용규칙){
-     css 코딩된 스타일을 적용.
-     
-     mediatype : all, print, screen
-     적용규칙    : max-heght, min-height, height
-                 max-width, min-width, width
-                 orientation
-  } 
- */ 
- @media  screen and (max-width:800px){
-     div#nav, div#article{
-          width: 100%;
-          height: auto;
-      }
- }
 </style>
 </head>
 <body>
-
-<!-- (#header>h2)+(#section>(#nav>ul>li*3>a[href=#])+#article>(h2+p+p)*3)+#footer>h2 -->
-<div id="header">
-	<h2>Cites-시멘틱태그(sementic elements)</h2>
-</div>
-<div id="section">
-	<div id="nav">
-		<ul>
-			<li><a href="#">London</a></li>
-			<li><a href="#">Paris</a></li>
-			<li><a href="#">Seoul</a></li>
-		</ul>
-	</div>
-	<div id="article">
-		<h2>London</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores nulla soluta sunt aut assumenda fugiat deleniti magnam sequi minima explicabo debitis perspiciatis iusto amet corporis minus illo aperiam quasi numquam!</p>
-		<p>Aliquid laudantium ducimus assumenda sequi dolore blanditiis temporibus esse iure! Veniam numquam aspernatur excepturi ipsum nemo inventore! Quaerat autem inventore voluptatibus deserunt dolores iste explicabo odit eum asperiores saepe dolor.</p>
-		 
-		<h2>Paris</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur corrupti itaque aliquid magni porro aspernatur possimus est nulla doloribus dignissimos modi nam nemo! Maiores veniam inventore sequi aliquid aut omnis!</p>
-		<p>Eveniet quod cupiditate ratione soluta sed maxime vitae consequatur placeat consectetur fuga ipsum repellat laborum reiciendis cumque aperiam atque provident inventore quia assumenda aliquam. Quas dolor accusantium possimus ex maiores!</p>
-		<h2>Seoul</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde asperiores commodi aperiam hic. Dolorum asperiores nemo voluptates quo architecto ullam. Delectus aut quas facere. Voluptas fugiat omnis veritatis in fuga!</p>
-		<p>Dolorem tempora aperiam nam ullam vel expedita maiores magnam labore ratione vitae adipisci laboriosam cumque tenetur possimus hic est eum necessitatibus nulla minus dolore dignissimos autem quam distinctio omnis quia.</p>		 
-	</div>
-    <!-- ::after 가상 요소 추가 -->
-</div>
-<div id="footer">
-	<h2>Footer</h2>
-</div>
-
+  <!-- <div class="box">Box - 1</div> -->
+<!--
+    [ 동적으로 요소를 생성 ]
+    js 변수 선언 : var, const, let 키워드 
+ -->
+ 
+<script>
+  /*
+  onload="init();"
+  function init(){
+	  // 웹 페이지가 로딩될 때 초기화 코딩.
+  }
+  */
+  
+  document.body.onload = function (){
+    // alert("xxx");
+    // 1. <div></div> 요소 생성
+    const box = document.createElement("div");
+    // 2. <div>Box - 1</div>
+    // box.innerText = "Box - 1";
+    const content = document.createTextNode("박스 - 1");
+    box.appendChild(content);
+    
+    
+    // 2-2. div 의 스타일 적용
+    /*
+    box.style.border = "1px solid gray";
+    box.style.width = "100px";
+    box.style.height = "100px";
+    box.style.textAlign = "center";
+    */
+    // box.className = "boxStyle";
+    box.classList.add("boxStyle");
+    
+    // 3. 생성된 요소는 body 요소의 자식으로 추가: appendChild(), prepend(), insertBefore()
+    document.body.appendChild(box);
+        
+    // 4.
+    box.addEventListener("click", function (){
+    	alert("동적으로 생성한 div 요소에 클릭 이벤트 처리 하는 예제")
+    });
+  }
+</script> 
 </body>
 </html>
+
+
+
+
+

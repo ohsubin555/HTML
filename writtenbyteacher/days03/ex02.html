@@ -3,46 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026. 7. 14. 오전 9:21:08</title>
+<title>2026. 7. 20. 오전 9:09:14</title>
 <link rel="shortcut icon" type="image/x-icon" href="/webPro/images/SiSt.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <style>
-  span{
-     border: 1px solid gray;
-     width: 100px;
-     display: inline-block;
-  }  
+  .imgbox{
+    width: 120px;
+    border: 1px solid gray;
+    
+    padding: 6px;
+    margin: 4px;
+    
+    text-align: center;
+  }
+  
+  .imgbox img{
+    width: 100%;
+  }
 </style>
 </head>
 <body>
-<!-- 
-  [ 블록(block) 모드와 인라인(inline) 모드 설명  ]
-  
-  [블럭모드]
-  - 항상 새로운 라인에 요소 출력 시작
-  - 부모의 너비의 100% 설정
-  <address><blockquote><dd><dl><dt><footer><h1>-<h6><hr><li><ol><p><pre><table><tfoot><ul>
+<!--  [display 속성]  inline, block, inline-block, none
+        ㄴ 배치(layout)를 제어하는 가장 중요한 속성 
         
-        <article><aside><canvas><div>
-        <fieldset><figcaption><figure><form>
-        <header><main><nav><noscript>
-        <section><video>        
-  display: block
-  
-  [인라인모드]
-  이전요소가 출력된 옆 출력 시작
-  display: inline
-  내용에 따라 자동으로 너비 설정. ( width 속성 X )
-  <a><abbr><b><bdo><big><br><button><cite><em><i><img><map><q>        
-  <acronym><code><dfn><input><kbd><label><object><output><samp><script><select><small><span><strong><sub><sup><textarea><time><tt><var><a><abbr><acronym><b><bdo><big><br><button><cite><code><dfn><em><i><img><input><kbd><label><map><object><output><q><samp><script><select><small><span><strong><sub><sup><textarea><time><tt><var>
+        ㄴ display(표시) = "none", 
+           ㄴ 요소가 없는 것 처럼 표시, 공간 차지 X
+          visibility = "hidden" 속성 차이점 
+           ㄴ 숨기기 , 공간 차지 O ,숨겨진 요소를 사용할 수 있다. 
+        
+        
  -->
+<!-- #imgbox$.imgbox*3>{Box$}+img[src='../images/img_??.jpg' alt]+button --> 
+<div style="display: flex;">
+<div id="imgbox1" class="imgbox">
+  Box1
+  <img src="../images/img_5terre.jpg" alt="" />
+  <button>Remove</button>
+</div>
+<div id="imgbox2" class="imgbox">
+  Box2
+  <img src="../images/img_lights.jpg" alt="" />
+  <button>Hide</button>
+</div>
+<div id="imgbox3" class="imgbox">
+  Box3
+  <img src="../images/img_forest.jpg" alt="" />
+  <button>ResetAll</button>
+</div> 
+</div>
+<script>
+  // jq
+  $("#imgbox1 > button").on("click", function (){
+	  // $(this).parent().css("display", "none"); 
+	  $(this).parent().hide();
+  });
+  
+  $("#imgbox2 > button").on("click", function (){ 
+	  $(this).parent().css("visibility", "hidden"); 
+  });
+  
+  $("#imgbox3 > button").on("click", function (){ 
+	  $("#imgbox1 > button").parent().show();
+	  $("#imgbox2 > button").parent().css("visibility", "visible"); 
+  });
+</script>
 
-<span>양인석</span>
-<span>안정빈</span>
-<span>신창만</span> 
- 
+<script>
+  /* js
+  const btnRemove = document.querySelector("#imgbox1 > button");
+  const btnHide = document.querySelector("#imgbox2 > button");
+  const btnResetAll = document.querySelector("#imgbox3 > button");
+  
+  btnRemove.addEventListener("click", function (){
+	  btnRemove.parentElement.style.display = "none";
+  });
+  btnHide.addEventListener("click", function (){
+	  btnHide.parentElement.style.visibility = "hidden";
+  });
+  btnResetAll.addEventListener("click", function (){
+	  btnRemove.parentElement.style.display = "block";
+	  btnHide.parentElement.style.visibility = "visible";
+  });
+  */
+</script>
 </body>
 </html>
+
+
 
 
 

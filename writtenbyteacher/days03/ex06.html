@@ -3,38 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026. 7. 14. 오후 2:16:49</title>
+<title>2026. 7. 20. 오후 2:09:23</title>
 <link rel="shortcut icon" type="image/x-icon" href="/webPro/images/SiSt.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <style>
-  h3{
-    background-color: yellow;
+  div{
+    border: 1px solid gray;
+    width: 80%;
+    margin: 0 auto;
+    height: 100px;
   }
   
-  /* :가상클래스 */
-  h3:hover{
-    color: red;
+  .prev, .next{
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    
+    position: absolute;
+    top:25px;
   }
-  
-  /* ::의사(가상)요소
-      ㄴ 가짜 요소(element)
-      ㄴ 요소의 지정된 위치에 가짜 요소 있어서 그 가짜 요소에
-      스타일 지정 
-  */
-  h3::before{
-     content: "이미지"; /* url('../../images/SiSt.ico'); */
+  .prev{
+     left:-25px;
   }
-  h3::after{
-     content: "~~~~~";
+  .next{
+    right: -25px;
   }
 </style>
 </head>
 <body>
 
-<!-- h3*3>lorem5 -->
-<h3>Lorem ipsum dolor sit amet.</h3>
-<h3>Consectetur deleniti ad voluptatem tenetur!</h3>
-<h3>Sit ipsam totam temporibus pariatur?</h3>
+
+<div></div>
+<div></div>
+<div style="position: relative;border-color: red">
+	<button class="prev">&lt;</button>
+	<button class="next">&gt;</button>
+</div>
+
+<div></div>
+<div></div>
+<div style="position: relative;border-color: blue">
+	<button class="prev">&lt;</button>
+	<button class="next">&gt;</button>
+</div>
 
 </body>
 </html>
