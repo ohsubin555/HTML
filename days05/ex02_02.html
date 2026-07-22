@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 22. 오전 9:35:45</title>
+<link rel="shortcut icon" type="image/x-icon" href="/webPro/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<style>
+  div{
+	width: 300px;
+	height: 100px;
+	background-color: yellow;
+	border: 1px solid;    
+  }  
+</style>
+</head>
+<body>
+  <input id="rdoClockWise" type="radio" name="direction" value="1"
+		checked="checked">
+  <label for="rdoClockWise">시계방향</label>
+  
+  <input id="rdoReverseClockWise" type="radio" name="direction" value="-1">
+  <label for="rdoReverseClockWise">반시계방향</label>
+  
+  <br> 회전속도 : 
+  <input type="range" min="10" max="1000" value="10" id="rspeed">
+  <br>
+  <button>회전 시작</button>
+  <button disabled="disabled">회전 멈춤</button>
+ 
+  <!-- p*3>{.} -->
+  <p>.</p>
+  <p>.</p>
+  <p>.</p>
+  
+  <!-- div>lorem15 -->
+  <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa temporibus ut tempora ullam facilis eum!</div>
+  		
+
+<script>
+  // body > button:nth-child(8)
+  const btnStart = document.querySelector("body> button:first-of-type");
+  // button:nth-of-type(2)
+  const btnStop = document.querySelector("body> button:last-of-type");
+  
+  const rotateSpeed = document.querySelector("#rspeed");
+  
+  // 회전 방향
+  let direction = 1; // 시계방향
+  // 회전각도
+  let angle = 1;     // 1도
+  // 
+  let timer;
+  
+  btnStart.addEventListener("click", function (){	  
+	  //alert("1")
+	  // type=radio 시계/반시계 체크
+	  /* [1] 풀이
+	  const radios = document.querySelectorAll("input[name='direction']");
+	  // console.log( radios );
+	  radios.forEach( rdo => {
+		  // console.log( rdo.id +" / " + rdo.checked  );
+		  if( rdo.checked ) direction = rdo.value;	 
+	  } );
+	  */
+	  // [2] 풀이
+	  const checkedRadio = document.querySelector("input[name='direction']:checked");
+	  direction = checkedRadio.value;
+	  
+	  // js 함수 호출
+	  // alert( typeof  direction); string "1"  "-1"
+	  
+	  // targetRotate( target );
+	  // 일정한 시간 간격으로 targetRotate() 계속 호출
+	  timer = setInterval( targetRotate , rotateSpeed.value );
+	   
+	  btnStart.disabled = true; // 비활성화
+	  btnStop.disabled = false; // 활성화
+  });
+  
+  function targetRotate(){
+	  const target = document.querySelector("body > div");  
+	// css - transform: rotate(20deg);
+    // js
+    target.style.transform = `rotate(${angle}deg)`;
+    
+    /*
+    if ( direction == 1 ) {
+    	angle++;
+	} else {
+		angle--;
+	} 
+    */
+    
+    angle += Number(direction);
+    
+  }
+  
+  btnStop.onclick = function (){
+	  //alert("2");
+	  
+	  clearInterval(timer);
+	  
+	  btnStart.disabled = false; // 활성화
+	  btnStop.disabled = true; // 비활성화
+  }
+   
+</script>  		
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
