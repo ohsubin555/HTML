@@ -2,33 +2,205 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 22. 오후 5:24:09</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
 </head>
 <body>
-<h3>html 수업 1일차</h3>
-<!-- ul>li*5 -->
-<ul>
-	<li>html
-	  <ol>
-	    <li>HyperText Markup Language</li>
-	    <li>웹 페이지의 구조(뼈대)를 만드는 마크업 언어</li>
-	    <li>태그(Tag) 를 이용해서 문서의 구조를 정의: 시작태그,닫기태그</li>
-	    <li>Element(요소)= 시작태그+내용(Content)+닫기태그</li>
-	  </ol>
-	</li>
-	<li>HTML 문서의 기본 구조
-	  <ol>
-	    <li>&lt;!DOCTYPE html&gt; 문서 유형 선언문, html5 문법을 따르는 문서, 대문자 권장</li>
-	    <li> html : html 문서의 시작 ~ 끝, 루트(root) 엔리먼트, 모든 요소의 최상위 부모 요소 </li>
-	    <li> html > head : html 문서의 메타 정보가 포함. 필수 X</li>
-	    <li> html > head > meta : 인코딩 UTF-8 메타 정보 </li>
-	    <li> html > head > title: 브라우저의 제목 지정  </li>
-	    <li> html > body : 필수 O, 문서의 본문( 제목, 이미지, 표, 목록 등등)을 정의하고 보여지는 모든 콘텐츠를 담는 요소(컨테이너)</li>
-	  </ol>
-	</li>
-	<li>W3C- https://www.w3.org/TR/2014/REC-html5-20141028/</li>
-	<li></li>
-	<li></li>
-</ul>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+     example.css
+  </xmp>
+  
+  <h1 class="main">H1 Title <small>sub title</small></h1>  
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est veritatis quaerat in consequatur dicta ducimus dolorum similique ipsam nam placeat praesentium repellat nesciunt eos vero eum. Consectetur quaerat consequuntur odio.</p>
+  
+  <h2>H2 Title <small>sub title</small></h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit tempora rerum aliquid ducimus impedit! Nemo quibusdam expedita corrupti dicta esse in inventore quis maiores! Velit voluptatum dolorum rem quidem dolor!</p>
+  
+  <h3>H3 Title <small>sub title</small></h3>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus sed veritatis aliquid voluptas similique fugit sint fuga nostrum temporibus dolores placeat nulla odit illum numquam error culpa at deleniti saepe.</p>
+  
+  <hr>
+  
+  <div>
+    <h3>Form Controls</h3>
+    <form>
+      <div>
+        <input type="text" class="short" name="name" placeholder="이름 입력">
+      </div>
+      <div>
+        <input type="text" class="long" name="tel" placeholder="연락처 입력">
+      </div>
+      <div>
+        <!-- 
+           width: calc(100% - 20px);  부모요소의 너비 - 20px
+           calc() css 함수: 계산식을 사용할 수 있는 함수 
+        -->
+        <input type="text" class="full" name="addr" placeholder="주소 입력">
+      </div>
+    </form>
+    
+    
+    <form>
+      <h3>일반 버튼</h3>
+      <div>
+        <input type="button" class="primary" value="메인 버튼">
+      </div>
+      <div>
+        <input type="button" value="보조 버튼">
+      </div>
+      <h3>이미지 버튼</h3>
+      <div>
+        <button class="add">쓰기</button>
+        <button class="back">돌아가기</button>
+      </div>
+      
+      <h3>라벨 컨트롤</h3>
+      <div class="group">
+        <label for="id">아이디</label>
+        <input id="id" type="text" class="short">
+      </div>
+      <div class="group">
+        <label for="email">이메일</label>
+        <input id="email" type="text" class="long">
+      </div>
+      <div class="group">
+        <label for="addr">주소</label>
+        <input id="addr" type="text" class="full">
+      </div>
+      
+      <h3>버튼 그룹</h3>
+      <div class="group">
+        <input type="button" value="확인">
+        <input type="button" value="취소">
+        <input type="button" value="홈">
+      </div>
+      <div class="group">
+         <input type="button" class="add" value="글쓰기">
+         <input type="button" class="list" value="목록보기">
+         <button class="add">글쓰기</button>
+         <button class="list">목록보기</button>
+      </div>
+    </form>
+    
+    <h3>테이블(가로)</h3>
+    <!-- table>tr>th*3>{column}^^tr*2>td*3>{cell} -->
+    <table>
+    	<tr>
+    		<th>column</th>
+    		<th>column</th>
+    		<th>column</th>
+    	</tr>
+    	<tr>
+    		<td>cell</td>
+    		<td>cell</td>
+    		<td>cell</td>
+    	</tr>
+    	<tr>
+    		<td>cell</td>
+    		<td>cell</td>
+    		<td>cell</td>
+    	</tr>
+    </table>
+    
+    <h3>테이블(세로)</h3>
+    <table>
+    	<tr>
+    		<th style="width: 150px">column</th>
+    		<td>cell</td>
+    		<td>cell</td> 
+    	</tr>
+    	<tr>
+    		<th>column</th>
+    		<td>cell</td>
+    		<td>cell</td> 
+    	</tr>
+    	<tr>
+    		<th>column</th>
+    		<td>cell</td>
+    		<td>cell</td> 
+    	</tr>
+    </table>
+    
+    <h3>패널</h3>
+    <!-- div[title=Notice]>lorem -->
+    <div class="panel" title="Notice">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni nemo quia cum pariatur blanditiis doloremque quasi sequi voluptates quae soluta voluptatem porro eaque quis perferendis ipsum. Maxime distinctio voluptas earum?</div>
+    
+    <h3>좌우 분리</h3>
+    <div class="seperate">
+       <div>자바</div>
+       <div>오라클</div>
+    </div>
+    
+    <h3>배지(badge): 상징, 표식, 배지(휘장)</h3>
+    <!-- div*5>lorem4 -->
+    <div>Lorem ipsum dolor sit.<span class="badge">3</span></div>
+    <div>Eveniet obcaecati laborum aperiam.<span class="badge red right">24</span></div>
+    <div>Nisi molestias ab aut.<span class="badge red left">5</span></div>
+    <div>Odio accusamus aspernatur voluptates.<span>7</span></div>
+    <div>Tempora culpa inventore tempore!<span>30</span></div>
+    
+    <h3>목록</h3>
+    <div class="list">
+      <!-- div*4>{item} -->
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+      <div>item</div>
+    </div>
+    
+    <div class="list full">
+      <!-- div*4>{item} -->
+      <div>item</div>
+      <div>item<span class="badge right red">5</span></div>
+      <div>item</div>
+      <div>item</div>
+    </div>
+    
+    <h3>프로그램 코드</h3>
+    <pre class="code">
+      int age = 20;
+      System.out.println(age);
+    </pre>
+    
+    <h3>페이징 처리</h3>
+    <!-- div>div>a[href=$]*11>{$} -->
+    <div class="center">
+    	<div class="pagination">
+    		<a href="1">1</a>
+    		<a href="2">2</a>
+    		<a href="3">3</a>
+    		<a href="4">4</a>
+    		<a href="5" class="active">5</a>
+    		<a href="6">6</a>
+    		<a href="7">7</a>
+    		<a href="8">8</a>
+    		<a href="9">9</a>
+    		<a href="10">10</a>
+    		<a href="11">next</a>
+    	</div>
+    </div>
+    
+  </div>
+  
+  
+</div>
 </body>
 </html>
+
+
+
+

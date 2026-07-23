@@ -40,20 +40,24 @@
   const imgBulb = $("img") ;
   
   
+  imgBulb.hover(
+		  // mouseover
+		  function (){
+			  imgBulb.attr("src", "../../javascript/images/pic_bulbon.gif");
+			  
+			  btnTurnOn.hide();
+			  btnTurnOff.show();
+		  },
+		  // mouseout
+		  function (){
+			  imgBulb.prop("src", "/javascript/images/pic_bulboff.gif");
+			  
+			  btnTurnOn.show();
+			  btnTurnOff.hide()
+		  } 
+	 );
   
-  btnTurnOn.on( "click", function (){	  
-	  imgBulb.attr("src", "../../javascript/images/pic_bulbon.gif");
-	  
-	  btnTurnOn.hide();
-	  btnTurnOff.show();
-  } );
-  
-  btnTurnOff.on("click", function (){
-      imgBulb.prop("src", "/javascript/images/pic_bulboff.gif");
-	  
-	  btnTurnOn.show();
-	  btnTurnOff.hide()
-  }); 
+    
 </script>
 </body>
 </html>

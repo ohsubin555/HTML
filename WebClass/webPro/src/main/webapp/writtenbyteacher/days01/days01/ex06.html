@@ -2,109 +2,68 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
-<!-- <link rel="shortcut icon" type="image/x-icon" href="
-https://www.naver.com/favicon.ico?1"> -->
-<link rel="shortcut icon" type="image/x-icon" href="/webPro/images/SiSt.ico"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 23. 오후 4:29:40</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
 <style>
-  strong{
+
+  .item{
     color: red;
+    font-size: 30px;
+    border: 5px solid gray;
   }
+  
+
 </style>
 </head>
 <body>
-
-<!-- 
-    파비콘(favicon) : 브라우저 탭에 제목 옆에 있는 작은 이미지
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    javascript/ex06.html
     
-    https://www.favicon.cc
-    원하는 이미지를 파비콘으로 만들 수 있는 사이트
+    div 태그 위에 마우스를 올릴 때
+    1. 글 색상
+    2. 글 크기
+    3. 테두리
+    를 지정
+  </xmp>
   
-    파비콘 지원 파일 형식 : ico, png, gif, jpeg, svg
-  
-    Edge, Chrome, FieFox, Opera, Safari 등 모두 위의 형식 지원한다. 
-  
-    - link 태그 사용
-       ㄴ 현재 문서와 외부자원을 연결을 정의하는 태그
- -->
+  <div id="demo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae laudantium sunt maxime vel mollitia voluptatibus tempore quas dignissimos reiciendis quo minima deleniti in nihil temporibus illum consectetur aliquid ipsa quos.</div>
 
-<hr>
+</div>
 
-<h3>글꼴(font)</h3>
-
-<!-- font[size=$]*7>{안녕하세요. 홍길동입니다.} -->
-<font size="1">안녕하세요. 홍길동입니다.</font><br>
-<font size="2">안녕하세요. 홍길동입니다.</font><br>
-<font size="-1">안녕하세요. 홍길동입니다.</font><br>
-<font size="3" color="red" face="궁서체">안녕하세요. <font color="blue" size="5">홍길동</font>입니다.</font><br>
-<font>안녕하세요. 홍길동입니다.</font><br>
-<font size="+1">안녕하세요. 홍길동입니다.</font><br>
-<font size="4">안녕하세요. 홍길동입니다.</font><br>
-<font size="5">안녕하세요. 홍길동입니다.</font><br>
-<font size="6">안녕하세요. 홍길동입니다.</font><br>
-<font size="7">안녕하세요. 홍길동입니다.</font><br>
-
-<hr>
-
-<h3>특별한 유형의 텍스트 나타내는 태그( 서식 요소 )</h3>
-
-<ol>
-  <li><b>bold 굵은 텍스트</b></li>
-  <li><strong>중요한 텍스트 강조, 굵게</strong></li>
-  <li><i>italic 텍스트, 기울임꼴</i></li>
-  <li><em>중요한 텍스트 강조, 기울임꼴</em></li>
-  <li><mark>중요한 텍스트 강조, 노랑색 배경색</mark></li>
-  <li><small>작은 텍스트</small></li>
-  <li><del>홍길동, 취소, 삭제</del></li>
-  <li><ins>삽입된 텍스트, 밑줄</ins></li>
-  <li>아랫첨자 H<sub>2</sub>O</li>
-  <li>윗첨자 2<sup>3</sup></li>
-</ol>
-
-<hr>
-
-<!-- abbreviation 약어
-      ㄴ 브라우저 검색엔진 
-      ㄴ 마우스를 올리면 풍선도움말(툴팁)
- -->
-
-<abbr title="hybertext markup language">html</abbr>
-
-
-<hr>
-
-<!-- 모든 연락처 정보 : 집주소, 연락처, 이메일, 홈페이지주소 등등 -->
-<address>
-   서울 강남구... <br>
-   010-1000-1000<br>
-   hong@naver.com<br>
-   http://www.home.org<br>
-   :
-</address>
-<hr>
-<!-- cite:   창작작품(책, 소설, 시, 영화, 그림)의 제목을 나타내는 태그
-            ㄴ 기울임꼴 표시
- -->
-<cite>홍길동젼</cite>
-<br>
-홍길동젼 설명...<br>
-홍길동젼 설명...<br>
-홍길동젼 설명...<br>
-홍길동젼 설명...<br>
-홍길동젼 설명...<br>
-
-<hr>
-<!-- bi-directional override
-     양 방향         재정의
-     ㄴ 현재 텍스트 방향을 재정하는 태그 
--->
-<bdo dir="ltr">Lorem ipsum dolor sit.</bdo>
-<br>
-<bdo dir="rtl">Lorem ipsum dolor sit.</bdo>
-
+<script>
+   $("#demo").on("mouseover", function (){
+	  /* [1] 
+	  $(this).css({
+		  "color":"red",
+		  "font-size": "30px",
+		  "border":  "1px solid gray"
+	  }) 
+	  */
+	  
+	  // [2]
+	  // jq method: 클래스 속성을 추가 -- addClass()
+	  // jq method: 클래스 속성을 제거 -- removeClass()
+	  // $(this).addClass("item");
+	  
+	  // [3]
+	  // $(this).attr("class", "box");
+	  $(this).prop("class", "box");
+   });
+</script>
 </body>
 </html>
-
 
 
 
