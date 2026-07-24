@@ -3,42 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>2026. 7. 13. 오전 7:35:11</title>
-<link rel="shortcut icon" type="image/x-icon" href="/webPro/images/SiSt.ico">
+<title>2026. 7. 24. 오전 7:34:29</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
 <style>
+  .box{
+    color: red;
+    display: inline-block;
+    width: 200px;
+    border: 1px solid gray;
+  }  
 </style>
 </head>
 <body>
-<h3>picture 태그</h3>
-<!--
-  ㄴ "반응형 웹"을 만들 때 사용 
-  ㄴ "반응형 웹": 
-     - Responsive Web Design, RWD
-     - 하나의 웹사이트가 PC, 태블릿, 스마트폰 등 다양한 화면 크기에 맞게 
-       자동으로 레이아웃을 변경하는 웹 개발 방식
-  ㄴ      
- -->
- <!-- 
- <img alt="" src="../images/img_pink_flowers.jpg" style="width:460px ;height: 345px">
- <br>
- <img alt="" src="../images/img_white_flower.jpg" style="width:214px ;height: 204px">
- <br>
- <img alt="" src="../images/img_orange_flowers.jpg" style="width:100px ;height: 135px">
-  -->
- 
- <picture>
-   <!-- media="(min-width:650px)"  미디어 속성, 브라우저의 너비가 최소 650px 이상일때 적용
-        css 로 미디어 속성을 적용할 때는 @media (min-width:650px){} 설정한다. 
-    -->
-   <source media="(min-width: 650px)" srcset="../images/img_pink_flowers.jpg">
-   <!-- media="(min-width:450px)"  미디어 속성, 너비가 최소 650px 이상일때 적용 -->
-   <source media="(min-width: 450px)" srcset="../images/img_white_flower.jpg">
-   <!--  그 외에는  -->
-   <img alt="" src="../images/img_orange_flowers.jpg" style="width:100px ;height: 135px">
- </picture> 
- 
+	<header>
+		<h1 class="main">
+			<a href="#" style="position: absolute; top: 30px;">kEnik HOme</a>
+		</h1>
+		<ul>
+			<li><a href="#">로그인</a></li>
+			<li><a href="#">회원가입</a></li>
+		</ul>
+	</header>
+	<div>
+		<xmp class="code"> fieldset: 관련된 폼 요소들을 하나의 그룹으로 묶는 태그 </xmp>
+
+		<fieldset>
+			<legend>html 적용 여부</legend>
+
+			<form action="">
+				<input type="radio" name="htmlApply" id="hyes" checked="checked">				
+				<label for="hyes">적용</label>
+				
+				<input type="radio" name="htmlApply" id="hno"> 
+				<label for="hno">미적용</label> 
+				
+				<br> 
+				<input type="text" id="message" class="full"
+					value="<span class='box'>홍길동</span>"> 
+				<br>
+				<button type="button">실행</button>
+			</form>
+		</fieldset>
+		<p id="demo"></p>
+	</div>
+
+<script>
+  $("body > div > fieldset > form > button").on( "click",  function (){	 
+	 let message = $("#message").val();	 
+	 // attr(), prop()
+	 if ( $("input[name='htmlApply']:checked").prop("id") == "hyes" ){
+		 $("#demo").html( message );
+	 }else{
+		 $("#demo").text( message );
+	 }	 
+  } );
+</script>	
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 

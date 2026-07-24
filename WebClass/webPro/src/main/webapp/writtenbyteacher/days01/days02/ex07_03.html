@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2026. 7. 24. 오후 1:44:22</title>
+<link rel="shortcut icon" type="image/x-icon" href="/images/SiSt.ico">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="/resources/cdn-main/example.css">
+<script src="/resources/cdn-main/example.js"></script>
+<style>
+</style>
+</head>
+<body>
+<header>
+  <h1 class="main"><a href="#" style="position: absolute;top:30px;">kEnik HOme</a></h1>
+  <ul>
+    <li><a href="#">로그인</a></li>
+    <li><a href="#">회원가입</a></li>
+  </ul>
+</header>
+<div>
+  <xmp class="code">
+    [ex07_03.html]
+  </xmp>
+</div>
+<script>
+  // [2] const 키워드 설명
+  // const 상수
+  { // 블럭 영역 안 
+    const PI = 3.141592;
+    // PI = 3.14; // 재할당할수 없는 변수 X
+  }
+  // const PI = 3.141592; // 재선언 X
+  
+  // [js] const 상수
+  // 1. 배열(array)
+  const m = [1,2,3];
+  console.log( m[0] );
+  m[1] = 100;
+  console.log( m[1] );
+  console.log( m[2] );
+  
+//  Uncaught TypeError: Assignment to constant variable.
+//  m = [2,3,4];  
+  
+  // 2. 객체(object)
+  const person = {
+	  name: "홍길동",
+	  age: 20
+  };
+  
+  person.name = "서영학";
+  person.age = 30;
+  
+  //ex07_03.html:56 Uncaught TypeError: Assignment to constant variable.
+  // person = {   };  // X
+  
+  // 3. 함수(function)
+  // 4. 정규표현식( regexp )
+  
+</script>
+<script>
+ /* [1]
+ // [var 키워드] 
+ // var age = 25;
+ age = 25;
+  
+  
+  
+  
+  // js 호이스팅: 모든 선언을 현재 범위(함수 안, script 안 )의 맨 위로
+  //             이동시키는 js의 기본 기능
+  var age;  // 재선언  
+  // 재선언을 하더라도 변수의 값은 손실되지 않고 유지되더라.
+//  alert( age ); // 25
+
+
+   let x = 10;
+   
+   {
+	   let x = 20;
+   }
+   */
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
